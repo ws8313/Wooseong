@@ -40,11 +40,11 @@ const Wrapper = styled(Container)`
             color: ${theme.color.gray7};
             font-weight: 300;
             font-size: 3rem;
-            line-height: 4rem;
+            line-height: 3.5rem;
             border-bottom: 0.1rem solid transparent;
             &:hover {
-                color: ${theme.color.red};
-                border-bottom: 0.1rem solid ${theme.color.red};
+                color: ${theme.color.black};
+                border-bottom: 0.1rem solid ${theme.color.black};
             }
         }
     }
