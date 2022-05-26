@@ -3,7 +3,7 @@ import "styled-components";
 declare module "styled-components" {
     export interface DefaultTheme {
         color: {
-            black: "#333333";
+            black: "#000000";
             gray7: "#585858";
             gray6: "#767676";
             gray5: "#9C9C9C";
@@ -15,12 +15,14 @@ declare module "styled-components" {
             gray1_7: "#F0F0F0";
             gray1_5: "#F7F7F7";
             gray1: "#F8F9FA";
+            black: "#000000";
+            blue: "#3EFFFF";
+            red: "#FF5E5E";
             white: "#FFFFFF";
             orange: "#FF7964";
             orange_light: "#FFF2EF";
             orange_very_light: "#FFF8F7";
             orange_medium: "#FFBCB1";
-            red: "#FC453A";
             dark_green: "#09C6A1";
         };
     }

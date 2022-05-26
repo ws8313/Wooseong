@@ -13,7 +13,7 @@ export const Globalstyle = createGlobalStyle`
     html {
         font-size: 10px;
         -webkit-text-size-adjust: none;
-        font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+        font-family: Montserrat, 'sans-serif';
         font-display: fallback;
         -ms-overflow-style: none;
         scrollbar-width: none;
