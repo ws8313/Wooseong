@@ -1,4 +1,5 @@
 import Main from "./components/Main";
+import Intro from "./components/Intro";
 
 import { flexCenter } from "./styles/theme";
 import styled from "styled-components";
@@ -16,6 +17,7 @@ function App() {
       <div className="App">
         <div className="wrapper">
           <Main />
+          <Intro />
         </div>
       </div>
     </AppContainer>

@@ -31,10 +31,9 @@ const Wrapper = styled(Container)`
     }
     .links {
         display: flex;
-        margin-top: 8.9rem;
+        margin-top: 7rem;
         gap: 2.6rem;
         padding-bottom: 1.4rem;
-        /* position: relative; */
         .link {
             cursor: pointer;
             color: ${theme.color.gray7};
@@ -49,7 +48,7 @@ const Wrapper = styled(Container)`
         }
     }
     .infos {
-        margin-top: 5rem;
+        margin-top: 4rem;
         font-weight: 500;
         font-size: 1.8rem;
         line-height: 2.2rem;
