@@ -1,5 +1,6 @@
 import Main from "./components/Main";
 import Intro from "./components/Intro";
+import Activity from "./components/Activity";
 
 import { flexCenter } from "./styles/theme";
 import styled from "styled-components";
@@ -18,6 +19,7 @@ function App() {
         <div className="wrapper">
           <Main />
           <Intro />
+          <Activity />
         </div>
       </div>
     </AppContainer>
