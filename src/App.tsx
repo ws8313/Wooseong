@@ -39,6 +39,13 @@ function App() {
             </>
           )}
         </div>
+        <div className="none">
+          <div>{`Please
+          Access
+          On a
+          Wider
+          Screen.`}</div>
+        </div>
       </div>
     </AppContainer>
   );
