@@ -4,7 +4,7 @@ import { theme } from "../../styles/theme";
 const TextSlider = () => (
     <Wrapper>
         <div className="slider">
-            <div className="slide">WELCOME!</div>
+            <div className="slide">WELCOME</div>
             <div className="slide">KIM WOOSEONG</div>
             <div className="slide">FRONTEND</div>
         </div>
