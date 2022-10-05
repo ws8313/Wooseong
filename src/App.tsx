@@ -4,14 +4,30 @@ import Intro from "./components/Intro";
 import Information from "./components/Information";
 import Project from "./components/Project";
 import Slider from "./components/Slider";
-
-import { flexCenter } from "./styles/theme";
-import styled from "styled-components";
+import { lightTheme, darkTheme, flexCenter } from "./styles/theme";
+import styled, { ThemeProvider } from "styled-components";
 
 const AppContainer = styled.div`
+  color: ${({ theme }) => theme.color.white};
+  background-color: ${({ theme }) => theme.color.black};
   .wrapper {
     ${flexCenter};
     flex-direction: column;
+  }
+`;
+
+const ThemeToggle = styled.div<{ isDark: boolean }>`
+  cursor: pointer;
+  font-size: 1.5rem;
+  position: fixed;
+  z-index: 100;
+  top: 2rem;
+  right: 2rem;
+  color: ${({ theme }) => theme.color.white};
+  transition: 0.3s;
+  &:hover {
+    transition: 0.3s;
+    color: ${({ theme }) => theme.color.blue};
   }
 `;
 
@@ -24,30 +40,39 @@ function App() {
     }, 2500);
   }, []);
 
+  const [theme, setTheme] = useState("dark");
+  const handleTheme = () => {
+    if (theme === "dark") setTheme("light");
+    else setTheme("dark");
+  };
+
   return (
-    <AppContainer>
-      <div className="App">
-        <div className="wrapper">
+    <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+      <ThemeToggle onClick={handleTheme} isDark={theme === "dark"}>
+        {theme === "dark" ? "LIGHT MODE" : "DARK MODE"}
+      </ThemeToggle>
+      <AppContainer>
+        <div className="App">
           {slider ? (
             <Slider />
           ) : (
-            <>
+            <div className="wrapper">
               <Main />
               <Intro />
               <Information />
               <Project />
-            </>
+            </div>
           )}
         </div>
         <div className="none">
           <div>{`Please
-          Access
-          On a
-          Wider
-          Screen.`}</div>
+  Access
+    On a
+      Wider
+        Screen.`}</div>
         </div>
-      </div>
-    </AppContainer>
+      </AppContainer>
+    </ThemeProvider>
   );
 }
 

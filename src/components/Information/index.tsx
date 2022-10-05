@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container, flexCenter, theme } from "../../styles/theme";
+import { Container, flexCenter } from "../../styles/theme";
 
 const infos = [
   {
@@ -99,7 +99,7 @@ const Wrapper = styled(Container)`
     width: 100%;
     height: 70rem;
     position: sticky;
-    top: 2rem;
+    top: 10rem;
     .box {
       width: 100rem;
       margin-top: 5rem;
@@ -169,14 +169,14 @@ const Title = styled.div<{ title: string }>`
   font-size: 6.4rem;
   line-height: 7.8rem;
   color: transparent;
-  -webkit-text-stroke: 0.1rem ${theme.color.black};
+  -webkit-text-stroke: 0.1rem ${({ theme }) => theme.color.white};
   position: relative;
   ::after {
     content: "${({ title }) => `${title}`}";
     position: absolute;
     left: -0.4rem;
     top: -0.4rem;
-    -webkit-text-stroke: 0.1rem ${theme.color.blue};
+    -webkit-text-stroke: 0.1rem ${({ theme }) => theme.color.red};
     opacity: 0.7;
   }
   ::before {
@@ -184,7 +184,7 @@ const Title = styled.div<{ title: string }>`
     position: absolute;
     left: -0.4rem;
     top: -0.4rem;
-    -webkit-text-stroke: 0.1rem ${theme.color.dark_green};
+    -webkit-text-stroke: 0.1rem ${({ theme }) => theme.color.blue};
     opacity: 0.7;
   }
 `;

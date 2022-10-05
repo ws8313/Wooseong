@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
-import { Container, theme } from "../../styles/theme";
+import { Container } from "../../styles/theme";
 
 const links = [
   { id: "github", link: "https://github.com/ws8313" },
-  { id: "resume", link: "" },
+  {
+    id: "resume",
+    link: "https://wobbly-bottom-eeb.notion.site/Kim-Wooseong-9ed95e755f5f46db86fd5c61b9d5169c",
+  },
 ];
 
 const infos = [
@@ -44,7 +47,7 @@ const fadeIn = keyframes`
 `;
 
 const Link = styled.div<{ idx: number }>`
-  color: ${theme.color.gray7};
+  color: ${({ theme }) => theme.color.blue};
   font-weight: 300;
   font-size: 3rem;
   line-height: 3.5rem;
@@ -54,8 +57,8 @@ const Link = styled.div<{ idx: number }>`
   transition: 0.3s;
 
   &:hover {
-    color: ${theme.color.red};
-    border-bottom: 0.1rem solid ${theme.color.red};
+    color: ${({ theme }) => theme.color.red};
+    border-bottom: 0.1rem solid ${({ theme }) => theme.color.red};
     transition: 0.3s;
   }
 `;
@@ -85,20 +88,20 @@ const Wrapper = styled(Container)`
     animation: ${titleAnimation} 0.5s;
     &:nth-child(2) {
       text-align: end;
-      -webkit-text-stroke: 0.1rem ${theme.color.gray7};
+      -webkit-text-stroke: 0.1rem ${({ theme }) => theme.color.white};
       color: transparent;
       animation: ${titleAnimation2} 0.5s;
     }
   }
   .links {
     display: flex;
-    margin-top: 7rem;
+    margin-top: 12rem;
     gap: 2.6rem;
     padding-bottom: 1.4rem;
     cursor: pointer;
   }
   .infos {
-    margin-top: 4rem;
+    margin-top: 6rem;
     font-weight: 500;
     font-size: 1.8rem;
     line-height: 2.2rem;
@@ -134,13 +137,15 @@ const Main = () => {
   }, []);
   return (
     <Wrapper id="main">
-      <div id="title-1" className="title">FRONTEND</div>
+      <div id="title-1" className="title">
+        FRONTEND
+      </div>
       <div id="title-2" className="title">{`KIM
             WOOSEONG`}</div>
 
       <div className="links">
         {links.map((link, i) => (
-          <Link key={link.id} idx={i}>
+          <Link key={link.id} idx={i} onClick={() => window.open(link.link)}>
             {link.id}
           </Link>
         ))}

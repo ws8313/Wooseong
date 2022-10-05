@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import { theme } from "../../styles/theme";
 
 const TextSlider = () => (
   <Wrapper>
@@ -55,7 +54,7 @@ const Wrapper = styled.div`
       color: #fff;
       &:nth-child(2) {
         color: transparent;
-        -webkit-text-stroke: 0.1rem #fff;
+        -webkit-text-stroke: 0.1rem ${({ theme }) => theme.color.white};
       }
       &:nth-child(3) {
         position: relative;
@@ -66,7 +65,7 @@ const Wrapper = styled.div`
           position: absolute;
           left: -0.4rem;
           top: -0.4rem;
-          -webkit-text-stroke: 0.1rem ${theme.color.red};
+          -webkit-text-stroke: 0.1rem ${({ theme }) => theme.color.red};
           opacity: 0.7;
           color: transparent;
         }
@@ -77,7 +76,7 @@ const Wrapper = styled.div`
           position: absolute;
           left: 0.4rem;
           top: 0.4rem;
-          -webkit-text-stroke: 0.1rem ${theme.color.blue};
+          -webkit-text-stroke: 0.1rem ${({ theme }) => theme.color.blue};
           opacity: 0.7;
           color: transparent;
         }
