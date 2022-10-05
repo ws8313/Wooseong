@@ -13,6 +13,15 @@ export const Container = styled.div`
   max-width: 144rem;
 `;
 
+const customMediaQuery = (maxWidth: number): string =>
+  `@media (max-width: ${maxWidth}px)`;
+export const media = {
+  custom: customMediaQuery,
+  // laptop: customMediaQuery(1440),
+  tablet: customMediaQuery(1234),
+  // mobile: customMediaQuery(420),
+};
+
 export const theme: DefaultTheme = {
   color: {
     black: "#000000",

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { Container, theme } from "../../styles/theme";
 
@@ -30,10 +31,50 @@ const titleAnimation2 = keyframes`
     }
 `;
 
+const fadeIn = keyframes`
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+const Link = styled.div<{ idx: number }>`
+  color: ${theme.color.gray7};
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  border-bottom: 0.1rem solid transparent;
+  animation: ${fadeIn} 1s;
+  animation-delay: ${({ idx }) => `0.${idx}s`};
+  transition: 0.3s;
+
+  &:hover {
+    color: ${theme.color.red};
+    border-bottom: 0.1rem solid ${theme.color.red};
+    transition: 0.3s;
+  }
+`;
+
+const Info = styled.div<{ idx: number }>`
+  animation: ${fadeIn} 1s;
+  animation-delay: ${({ idx }) => `0.${idx}s`};
+
+  span {
+    font-weight: 300;
+    margin-left: 1rem;
+  }
+`;
+
 const Wrapper = styled(Container)`
   padding-top: 9rem;
   position: relative;
   .title {
+    position: sticky;
     top: 0;
     font-size: 14.4rem;
     font-weight: 900;
@@ -54,18 +95,7 @@ const Wrapper = styled(Container)`
     margin-top: 7rem;
     gap: 2.6rem;
     padding-bottom: 1.4rem;
-    .link {
-      cursor: pointer;
-      color: ${theme.color.gray7};
-      font-weight: 300;
-      font-size: 3rem;
-      line-height: 3.5rem;
-      border-bottom: 0.1rem solid transparent;
-      &:hover {
-        color: ${theme.color.black};
-        border-bottom: 0.1rem solid ${theme.color.black};
-      }
-    }
+    cursor: pointer;
   }
   .infos {
     margin-top: 4rem;
@@ -75,34 +105,53 @@ const Wrapper = styled(Container)`
     div {
       margin-top: 1.4rem;
     }
-    span {
-      font-weight: 300;
-      margin-left: 1rem;
-    }
+  }
+  .title-animation {
+    opacity: 0;
+    top: 10rem;
+    transition: 1s;
   }
 `;
 
 const Main = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const Title1 = document.querySelector("#title-1")!;
+      const Title2 = document.querySelector("#title-2")!;
+
+      window.scrollY > 100
+        ? Title1.classList.add("title-animation")
+        : Title1.classList.remove("title-animation");
+
+      window.scrollY > 200
+        ? Title2.classList.add("title-animation")
+        : Title2.classList.remove("title-animation");
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <Wrapper>
-      <div className="title">FRONTEND</div>
-      <div className="title">{`KIM
+    <Wrapper id="main">
+      <div id="title-1" className="title">FRONTEND</div>
+      <div id="title-2" className="title">{`KIM
             WOOSEONG`}</div>
 
       <div className="links">
-        {links.map((link) => (
-          <div className="link" key={link.id}>
+        {links.map((link, i) => (
+          <Link key={link.id} idx={i}>
             {link.id}
-          </div>
+          </Link>
         ))}
       </div>
 
       <div className="infos">
         <div>Front-end Developer</div>
-        {infos.map((info) => (
-          <div key={info.id}>
+        {infos.map((info, i) => (
+          <Info key={info.id} idx={i}>
             {info.id}.<span>{info.value}</span>
-          </div>
+          </Info>
         ))}
       </div>
     </Wrapper>
