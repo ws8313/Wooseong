@@ -3,6 +3,18 @@ import { Container, flexCenter } from "../../styles/theme";
 
 const infos = [
   {
+    id: "Careers",
+    contents: [
+      {
+        id: "1",
+        title: "저의 성장을 이끌어줄 곳을 찾고 있습니다",
+        type: "",
+        info: "",
+        date: "",
+      },
+    ],
+  },
+  {
     id: "Activities",
     contents: [
       {
@@ -101,14 +113,14 @@ const Wrapper = styled(Container)`
     position: sticky;
     top: 10rem;
     .box {
-      width: 100rem;
+      width: 65rem;
       margin-top: 5rem;
       .title {
         ${flexCenter};
         justify-content: space-between;
         /* text-align: start; */
         font-weight: 700;
-        font-size: 3rem;
+        font-size: 2.8rem;
         line-height: 4rem;
         .type {
           font-weight: 500;
@@ -138,18 +150,18 @@ const Wrapper = styled(Container)`
     /* &:nth-child(1) {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
     } */
     &:nth-child(1) {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
     }
-    /* &:nth-child(2) {
+    &:nth-child(2) {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-    } */
+    }
     /* &:nth-child(2) {
       display: flex;
       flex-direction: column;
