@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Main from "./components/Main";
 import Intro from "./components/Intro";
 import Information from "./components/Information";
-import Project from "./components/Activity";
+import Project from "./components/Project";
 import Slider from "./components/Slider";
 import { lightTheme, darkTheme, flexCenter } from "./styles/theme";
 import styled, { ThemeProvider } from "styled-components";
