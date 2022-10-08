@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 import "./reset.scss";
-import { flexCenter, media } from "./theme";
 
 export const Globalstyle = createGlobalStyle`
     :focus {
@@ -11,9 +10,6 @@ export const Globalstyle = createGlobalStyle`
         display: none;
     }
     html {
-        ${media.tablet} {
-            font-size: 5px;
-        }
         font-size: 10px;
         -webkit-text-size-adjust: none;
         font-family: Montserrat, 'sans-serif';
@@ -27,25 +23,9 @@ export const Globalstyle = createGlobalStyle`
         body {
             margin: 0;
         }
-        .App {
-            ${media.tablet} {
-                display: none;
-            }
-        }
         .none {
             display: none;
             
-            ${media.tablet} {
-                display: block;
-                ${flexCenter};
-                width: 100%;
-                height: 100vh;
-                font-size: 10rem;
-                font-weight: 900;
-                white-space: pre-wrap;
-                padding: 2rem;
-                box-sizing: border-box;
-            }
         }
     }
 `;

@@ -39,7 +39,7 @@ const titleAnimation = keyframes`
 `;
 
 const Wrapper = styled(Container)`
-  margin-top: 35rem;
+  margin-top: 15rem;
   height: 85rem;
   /* overflow: hidden; */
   position: relative;
@@ -64,7 +64,7 @@ const Wrapper = styled(Container)`
   }
   .container {
     position: absolute;
-    top: 8rem;
+    top: -4rem;
     width: 98rem;
     .title {
       width: 100%;
