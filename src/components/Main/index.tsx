@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
-import { Container } from "../../styles/theme";
+import { Container, media } from "../../styles/theme";
 
 const links = [
   { id: "github", link: "https://github.com/ws8313" },
@@ -56,6 +56,11 @@ const Link = styled.div<{ idx: number }>`
   animation-delay: ${({ idx }) => `0.${idx}s`};
   transition: 0.3s;
 
+  ${media.mobile} {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+
   &:hover {
     color: ${({ theme }) => theme.color.red};
     border-bottom: 0.1rem solid ${({ theme }) => theme.color.red};
@@ -76,6 +81,11 @@ const Info = styled.div<{ idx: number }>`
 const Wrapper = styled(Container)`
   padding-top: 9rem;
   position: relative;
+  ${media.mobile} {
+    #title-2 {
+      margin-top: 3rem;
+    }
+  }
   .title {
     position: sticky;
     top: 0;
@@ -86,6 +96,13 @@ const Wrapper = styled(Container)`
     letter-spacing: 0.12em;
     white-space: pre-line;
     animation: ${titleAnimation} 0.5s;
+
+    ${media.mobile} {
+      font-size: 4.3rem;
+      letter-spacing: 0;
+      line-height: 5rem;
+    }
+
     &:nth-child(2) {
       text-align: end;
       -webkit-text-stroke: 0.1rem ${({ theme }) => theme.color.white};
@@ -99,6 +116,12 @@ const Wrapper = styled(Container)`
     gap: 2.6rem;
     padding-bottom: 1.4rem;
     cursor: pointer;
+    position: relative;
+
+    ${media.mobile} {
+      margin-top: 20rem;
+      padding-bottom: 0.5rem;
+    }
   }
   .infos {
     margin-top: 6rem;
@@ -107,6 +130,14 @@ const Wrapper = styled(Container)`
     line-height: 2.2rem;
     div {
       margin-top: 1.4rem;
+    }
+
+    ${media.mobile} {
+      font-size: 1.3rem;
+      line-height: 2rem;
+      div {
+        margin-top: 1rem;
+      }
     }
   }
   .title-animation {
