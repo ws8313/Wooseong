@@ -34,19 +34,19 @@ const titleAnimation = keyframes`
     margin-top: 100vh;
   }
   100% {
-    margin-top: -60rem;
+    margin-top: -55rem;
   }
 `;
 
 const Wrapper = styled(Container)`
   margin-top: 15rem;
-  height: 80rem;
+  height: 75rem;
   overflow: hidden;
   position: relative;
   ${flexCenter};
 
   ${media.mobile} {
-    margin-top: 10rem;
+    /* margin-top: 15rem; */
   }
 
   .project-title-animation {
@@ -213,7 +213,7 @@ const Project = () => {
   }, []);
 
   return (
-    <Wrapper>
+    <Wrapper id="project">
       <div className="title-opacity">
         {"PROJECTS".split("").map((v) => (
           <div>{v}</div>

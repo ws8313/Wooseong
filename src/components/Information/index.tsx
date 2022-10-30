@@ -147,7 +147,7 @@ const Title = styled.div<{ title: string }>`
 
 const Information = () => {
   return (
-    <Wrapper>
+    <Wrapper id="information">
       {infos.map((info) => (
         <div className="container">
           <div>
