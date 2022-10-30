@@ -81,6 +81,7 @@ const Info = styled.div<{ idx: number }>`
 const Wrapper = styled(Container)`
   padding-top: 9rem;
   position: relative;
+
   ${media.mobile} {
     #title-2 {
       margin-top: 3rem;
@@ -98,7 +99,7 @@ const Wrapper = styled(Container)`
     animation: ${titleAnimation} 0.5s;
 
     ${media.mobile} {
-      font-size: 4.3rem;
+      font-size: 5rem;
       letter-spacing: 0;
       line-height: 5rem;
     }
@@ -119,7 +120,7 @@ const Wrapper = styled(Container)`
     position: relative;
 
     ${media.mobile} {
-      margin-top: 20rem;
+      margin-top: 22rem;
       padding-bottom: 0.5rem;
     }
   }
