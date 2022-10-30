@@ -36,6 +36,7 @@ const Intro = () => {
 
 const Wrapper = styled(Container)`
   ${flexCenter};
+  text-align: center;
   flex-direction: column;
   padding-top: 21rem;
   padding-bottom: 21rem;
@@ -62,7 +63,6 @@ const Wrapper = styled(Container)`
     }
 
     &:nth-child(2) {
-      text-align: center;
       font-weight: 600;
     }
   }
