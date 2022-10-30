@@ -49,7 +49,7 @@ const Wrapper = styled(Container)`
   ${media.mobile} {
     padding-top: 20rem;
     padding-bottom: 20rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     gap: 20rem;
     line-height: 2rem;
   }
