@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { media } from "./theme";
 import "./reset.scss";
 
 export const Globalstyle = createGlobalStyle`
@@ -23,9 +24,17 @@ export const Globalstyle = createGlobalStyle`
         body {
             margin: 0;
         }
-        .none {
+        .pc-only {
+            ${media.mobile} {
+                display: none;
+            }
+        }
+        .mobile-only {
             display: none;
             
+            ${media.mobile} {
+                display: block;
+            }
         }
     }
 `;

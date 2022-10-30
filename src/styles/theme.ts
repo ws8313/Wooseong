@@ -19,7 +19,7 @@ export const media = {
   custom: customMediaQuery,
   // laptop: customMediaQuery(1440),
   tablet: customMediaQuery(1234),
-  // mobile: customMediaQuery(420),
+  mobile: customMediaQuery(420),
 };
 
 export const darkTheme: DefaultTheme = {

@@ -52,7 +52,7 @@ function App() {
         {theme === "dark" ? "LIGHT MODE" : "DARK MODE"}
       </ThemeToggle>
       <AppContainer>
-        <div className="App">
+        <div>
           {slider ? (
             <Slider />
           ) : (
@@ -63,13 +63,6 @@ function App() {
               <Project />
             </div>
           )}
-        </div>
-        <div className="none">
-          <div>{`Please
-  Access
-    On a
-      Wider
-        Screen.`}</div>
         </div>
       </AppContainer>
     </ThemeProvider>
