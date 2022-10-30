@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
-import { Container, flexCenter } from "../../styles/theme";
+import { Container, flexCenter, media } from "../../styles/theme";
 
 const projects = [
   {
@@ -31,19 +31,24 @@ const projects = [
 
 const titleAnimation = keyframes`
   0% {
-    margin-top: 100rem;
+    margin-top: 100vh;
   }
   100% {
-    margin-top: -90rem;
+    margin-top: -60rem;
   }
 `;
 
 const Wrapper = styled(Container)`
   margin-top: 15rem;
-  height: 85rem;
-  /* overflow: hidden; */
+  height: 80rem;
+  overflow: hidden;
   position: relative;
   ${flexCenter};
+
+  ${media.mobile} {
+    margin-top: 10rem;
+  }
+
   .project-title-animation {
     animation: ${titleAnimation} 2s forwards;
   }
@@ -61,11 +66,21 @@ const Wrapper = styled(Container)`
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    ${media.mobile} {
+      font-size: 5rem;
+    }
   }
   .container {
     position: absolute;
-    top: -4rem;
+    top: 8rem;
     width: 98rem;
+
+    ${media.mobile} {
+      top: 3rem;
+      width: 100%;
+    }
+
     .title {
       width: 100%;
       ${flexCenter};
@@ -75,6 +90,12 @@ const Wrapper = styled(Container)`
       line-height: 7.8rem;
       width: 100%;
       text-align: center;
+
+      ${media.mobile} {
+        font-size: 3rem;
+        justify-content: space-around;
+        margin-top: 3rem;
+      }
     }
     .projects {
       display: grid;
@@ -82,6 +103,45 @@ const Wrapper = styled(Container)`
       gap: 4rem;
       margin-top: 7rem;
       align-items: start;
+
+      ${media.mobile} {
+        display: none;
+      }
+    }
+
+    .projects-shadow {
+      width: 100%;
+      height: 5rem;
+      top: 10rem;
+      z-index: 100;
+      left: 0;
+      position: absolute;
+      background: linear-gradient(#000, #00000000);
+    }
+    .projects-shadow-2 {
+      width: 100%;
+      height: 5rem;
+      bottom: -1rem;
+      z-index: 100;
+      left: 0;
+      position: absolute;
+      background: linear-gradient(#00000000, #000);
+    }
+    .projects-mobile {
+      display: none;
+      ${media.mobile} {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 5rem;
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+        box-sizing: border-box;
+        overflow-y: scroll;
+        height: 70vh;
+        gap: 2rem;
+        position: relative;
+      }
     }
   }
   /* .copyright {
@@ -91,11 +151,19 @@ const Wrapper = styled(Container)`
         font-weight: 300;
         font-size: 1.4rem;
         line-height: 1.7rem;
+        position: absolute;
+        left: 0;
+        bottom: 0;
     } */
 `;
 
 const ProjectBox = styled.div<{ link: boolean }>`
   width: 100%;
+
+  ${media.mobile} {
+    width: auto;
+  }
+
   cursor: ${({ link }) => (link ? "pointer" : "default")};
   div {
     width: 100%;
@@ -133,7 +201,7 @@ const Project = () => {
     const handleScroll = () => {
       const title1 = document.querySelector(".title-opacity")!;
 
-      if (window.scrollY > 3000) {
+      if (window.scrollY > 2800) {
         title1.classList.add("project-title-animation");
       } else {
         title1.classList.remove("project-title-animation");
@@ -172,7 +240,24 @@ const Project = () => {
             </ProjectBox>
           ))}
         </div>
-        {/* <div className="copyright">Copyright</div> */}
+
+        <div className="projects-shadow" />
+        <div className="projects-shadow-2" />
+
+        <div className="projects-mobile">
+          {projects.map((project) => (
+            <ProjectBox
+              // className="box"
+              link={project.link ? true : false}
+              onClick={() => project.link && window.open(project.link)}
+            >
+              <div className="project-title">{project.title}</div>
+              <div className="project-title type">{project.type}</div>
+              <div className="info">{project.info}</div>
+              {/* <div className="project-title">{project.date}</div> */}
+            </ProjectBox>
+          ))}
+        </div>
       </div>
     </Wrapper>
   );
