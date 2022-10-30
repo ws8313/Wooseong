@@ -37,13 +37,12 @@ const Intro = () => {
 const Wrapper = styled(Container)`
   ${flexCenter};
   flex-direction: column;
-  text-align: center;
   padding-top: 21rem;
   padding-bottom: 21rem;
   white-space: pre-line;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 2.4rem;
-  line-height: 4rem;
+  line-height: 2.9rem;
   gap: 30rem;
 
   ${media.mobile} {
@@ -55,7 +54,7 @@ const Wrapper = styled(Container)`
   }
 
   & > div {
-    width: 90rem;
+    width: 97.1rem;
     opacity: 0;
 
     ${media.mobile} {
@@ -63,6 +62,7 @@ const Wrapper = styled(Container)`
     }
 
     &:nth-child(2) {
+      text-align: center;
       font-weight: 600;
     }
   }
