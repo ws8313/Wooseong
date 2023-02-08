@@ -19,13 +19,20 @@ const infos = [
     contents: [
       {
         id: "1",
+        title: "Elice",
+        type: "엘리스",
+        info: "엘리스 AI 트랙 3기",
+        date: "2021.09.13 - 2022.03.12",
+      },
+      {
+        id: "2",
         title: "2022 Open Source Contribution Academy",
         type: "2022 오픈소스 컨트리뷰션 아카데미",
         info: "컨트리뷰션 Challenges - 모던 자바스크립트 튜토리얼",
         date: "2022.07.08 - 2022.08.10",
       },
       {
-        id: "2",
+        id: "3",
         title: "2022 Open Source Contribution Academy",
         type: "2022 오픈소스 컨트리뷰션 아카데미",
         info: "컨트리뷰션 Masters - 모던 자바스크립트 튜토리얼",
