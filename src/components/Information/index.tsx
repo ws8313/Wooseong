@@ -38,6 +38,13 @@ const infos = [
         info: "컨트리뷰션 Masters - 모던 자바스크립트 튜토리얼",
         date: "2022.08.11 - 2022.10.14",
       },
+      {
+        id: "4",
+        title: "Wanted Pre-Onboarding Frontend Internship",
+        type: "원티드",
+        info: "원티드 프리온보딩 프론트엔드 인턴십",
+        date: "2023.02.20 - 2023.03.24",
+      },
     ],
   },
 ];
@@ -63,16 +70,20 @@ const Wrapper = styled(Container)`
         width: 32rem;
         margin-top: 3rem;
       }
-      
-      .title {
+
+      .title_container {
         ${flexCenter};
         justify-content: space-between;
         font-weight: 500;
-        font-size: 2.8rem;
+        font-size: 2.4rem;
         line-height: 4rem;
 
         ${media.mobile} {
           font-size: 2rem;
+        }
+
+        .title {
+          width: 400px;
         }
 
         .type {
@@ -161,8 +172,8 @@ const Information = () => {
             <Title title={info.id}>{info.id}</Title>
             {info.contents.map((content) => (
               <div className="box">
-                <div className="title">
-                  <div>{content.title}</div>
+                <div className="title_container">
+                  <div className="title">{content.title}</div>
                   <div className="type">{content.type}</div>
                 </div>
                 {/* <div className="type">{content.type}</div> */}
