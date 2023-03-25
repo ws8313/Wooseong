@@ -8,24 +8,32 @@ const projects = [
     title: "Portfolio",
     type: "개인 프로젝트",
     info: "프론트엔드 개발자를 꿈꾸는 김우성의 포트폴리오입니다.",
-    date: "2022.05.24 - current",
-    link: "https://github.com/ws8313/wooseong",
+    github: "https://github.com/ws8313/wooseong",
+    demo: "https://woo-seong.netlify.app/",
   },
   {
     id: "2",
-    title: "이런게 나의 영화 인생캐 일리가",
+    title: "영화 추천 서비스",
     type: "팀 프로젝트",
     info: "코로나 상황에 따른 간단한 심리 테스트를 통해 사용자의 성격(MBTI)을 특정짓고, 나와 주인공의 MBTI에 따라 영화를 추천해주는 서비스입니다.",
-    date: "2021.12.21 - 2022.01.08",
-    link: "https://github.com/ws8313/SoulMateMovieCharacter",
+    github: "https://github.com/ws8313/SoulMateMovieCharacter",
+    demo: "https://soulmate-movie-character.netlify.app/",
   },
   {
     id: "3",
     title: "직업 심리 검사 서비스",
     type: "개인 프로젝트",
     info: "커리어넷에서 제공하는 직업심리검사 API를 사용하여 사용자의 직업 적합도를 확인할 수 있는 웹 서비스입니다.",
-    date: "2021.11.16 - 2021.11.27",
-    link: "https://github.com/ws8313/personalproject-psychologicaltest",
+    github: "https://github.com/ws8313/personalproject-psychologicaltest",
+    demo: "https://psycho-logical-test.netlify.app/",
+  },
+  {
+    id: "4",
+    title: "메모, 일기 서비스",
+    type: "개인 프로젝트",
+    info: "간단한 메모와 일기를 작성할 수 있는 웹 어플리케이션입니다.",
+    github: "https://github.com/ws8313/memo-diary",
+    demo: "https://memo-diary.netlify.app/",
   },
 ];
 
@@ -157,18 +165,17 @@ const Wrapper = styled(Container)`
     } */
 `;
 
-const ProjectBox = styled.div<{ link: boolean }>`
+const ProjectBox = styled.div`
   width: 100%;
 
   ${media.mobile} {
     width: auto;
   }
 
-  cursor: ${({ link }) => (link ? "pointer" : "default")};
   div {
     width: 100%;
-    text-align: start;
   }
+
   justify-self: center;
   padding: 1.3rem 0;
   box-sizing: border-box;
@@ -176,23 +183,35 @@ const ProjectBox = styled.div<{ link: boolean }>`
   .project-title {
     transition: 0.3s;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 2rem;
     line-height: 17px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
   .type {
-    font-size: 12px;
+    font-size: 1.4rem;
+  }
+  .info {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    height: 7rem;
   }
   transition: 0.3s;
+`;
+
+const ProjectLinkContainer = styled.div`
+  text-align: end;
+`;
+
+const ProjectLink = styled.span`
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-left: 1rem;
+
   &:hover {
     transition: 0.3s;
-    border-bottom: 0.1rem solid
-      ${({ link, theme }) => (link ? theme.color.red : "transparent")};
-    .project-title {
-      transition: 0.3s;
-      color: ${({ link, theme }) =>
-        link ? theme.color.blue : theme.color.white};
-    }
+    border-bottom: 0.1rem solid ${({ theme }) => theme.color.red};
+    color: ${({ theme }) => theme.color.blue};
   }
 `;
 
@@ -228,32 +247,48 @@ const Project = () => {
 
         <div className="projects">
           {projects.map((project) => (
-            <ProjectBox
-              // className="box"
-              link={project.link ? true : false}
-              onClick={() => project.link && window.open(project.link)}
-            >
+            <ProjectBox>
               <div className="project-title">{project.title}</div>
               <div className="project-title type">{project.type}</div>
               <div className="info">{project.info}</div>
+              <ProjectLinkContainer>
+                <ProjectLink
+                  onClick={() => project.github && window.open(project.github)}
+                >
+                  github
+                </ProjectLink>
+                <ProjectLink
+                  onClick={() => project.demo && window.open(project.demo)}
+                >
+                  demo
+                </ProjectLink>
+              </ProjectLinkContainer>
               {/* <div className="project-title">{project.date}</div> */}
             </ProjectBox>
           ))}
         </div>
 
-        <div className="projects-shadow" />
-        <div className="projects-shadow-2" />
+        {/* <div className="projects-shadow" />
+        <div className="projects-shadow-2" /> */}
 
         <div className="projects-mobile">
           {projects.map((project) => (
-            <ProjectBox
-              // className="box"
-              link={project.link ? true : false}
-              onClick={() => project.link && window.open(project.link)}
-            >
+            <ProjectBox>
               <div className="project-title">{project.title}</div>
               <div className="project-title type">{project.type}</div>
               <div className="info">{project.info}</div>
+              <ProjectLinkContainer>
+                <ProjectLink
+                  onClick={() => project.github && window.open(project.github)}
+                >
+                  github
+                </ProjectLink>
+                <ProjectLink
+                  onClick={() => project.demo && window.open(project.demo)}
+                >
+                  demo
+                </ProjectLink>
+              </ProjectLinkContainer>
               {/* <div className="project-title">{project.date}</div> */}
             </ProjectBox>
           ))}
