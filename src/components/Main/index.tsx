@@ -6,7 +6,7 @@ const links = [
   { id: "github", link: "https://github.com/ws8313" },
   {
     id: "resume",
-    link: "https://wobbly-bottom-eeb.notion.site/Kim-Wooseong-9ed95e755f5f46db86fd5c61b9d5169c",
+    link: "https://drive.google.com/file/d/1i56GmIlHPWiAYQrfauFXQskprICnkgIl/view?usp=sharing",
   },
 ];
 
