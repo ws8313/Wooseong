@@ -6,7 +6,7 @@ const links = [
   { id: "github", link: "https://github.com/ws8313" },
   {
     id: "resume",
-    link: "https://drive.google.com/file/d/1i56GmIlHPWiAYQrfauFXQskprICnkgIl/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1Qvn6d-k_G1RsQEYGtS4RFGRe2vWi7MbP/view?usp=sharing",
   },
 ];
 
